@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://djlkvyqn561aa"]
+
+[ext_resource type="Script" path="res://scripts/potion_fire.gd" id="1_jsysi"]
+[ext_resource type="Texture2D" uid="uid://dwsn4c2h8ja7j" path="res://assets/object_img/ChatGPT Image Apr 11, 2025, 02_24_45 PM.png" id="2_x14t8"]
+[ext_resource type="FontFile" uid="uid://c1es1jqn4ro0b" path="res://assets/assetsTutor6/GrapeSoda.ttf" id="3_sgmpq"]
+[ext_resource type="AudioStream" uid="uid://ogy5l2axsja3" path="res://assets/sound/511385__mrthenoronha__power-up-8-bit.wav" id="4_c3foi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgbwq"]
+
+[sub_resource type="Theme" id="Theme_40tki"]
+default_font = ExtResource("3_sgmpq")
+default_font_size = 35
+
+[node name="Potion" type="Node2D"]
+script = ExtResource("1_jsysi")
+
+[node name="PotionImg" type="Sprite2D" parent="."]
+position = Vector2(1.12488, 0.875123)
+rotation = 0.31106
+scale = Vector2(0.0993652, 0.0993652)
+texture = ExtResource("2_x14t8")
+
+[node name="UnlockZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnlockZone"]
+position = Vector2(-6.10948e-05, 6.19888e-05)
+scale = Vector2(3.32, 3.32)
+shape = SubResource("CircleShape2D_jgbwq")
+
+[node name="Label" type="Label" parent="UnlockZone"]
+offset_left = -144.0
+offset_top = -147.0
+offset_right = 145.0
+offset_bottom = -72.0
+theme = SubResource("Theme_40tki")
+text = "New power unlocked!
+Right click to shoot a ball"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="UnlockZone"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="UnlockZone"]
+stream = ExtResource("4_c3foi")
+volume_db = 9.0

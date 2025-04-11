@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://6u41hp8oahaf"]
+
+[ext_resource type="Texture2D" uid="uid://kacbwfcpljp5" path="res://assets/_story/slide1.png" id="2_8ev6o"]
+[ext_resource type="Texture2D" uid="uid://1wakih5sdmq8" path="res://assets/_story/slide2.png" id="3_wp241"]
+
+[sub_resource type="GDScript" id="GDScript_8l0f7"]
+script/source = "extends Node2D
+
+@export var slides: Array[Texture2D]    # array gambar
+@export var switch_delay := 2.0         # durasi per gambar (detik)
+@export var next_scene_path := \"res://scenes/Level1.tscn\"
+
+var current_index = 0
+
+func _ready():
+	$Timer.wait_time = switch_delay
+	$Timer.timeout.connect(_on_timer_timeout)
+	$Timer.start()
+	$Sprite2D.texture = slides[current_index]
+
+func _on_timer_timeout():
+	current_index += 1
+
+	if current_index >= slides.size():
+		get_tree().change_scene_to_file(next_scene_path)
+	else:
+		$Sprite2D.texture = slides[current_index]
+		$Timer.start()
+"
+
+[node name="IntroScene" type="Node2D"]
+position = Vector2(592, 302)
+scale = Vector2(1e-05, 1e-05)
+script = SubResource("GDScript_8l0f7")
+slides = Array[Texture2D]([ExtResource("2_8ev6o"), ExtResource("3_wp241")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

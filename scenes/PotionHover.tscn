@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvbijuok61cp"]
+
+[ext_resource type="Script" path="res://scripts/potion_hover.gd" id="1_bptqp"]
+[ext_resource type="Texture2D" uid="uid://dqxu3vhxf1rno" path="res://assets/object_img/ChatGPT Image Apr 9, 2025, 10_06_19 PM.png" id="2_n61fb"]
+[ext_resource type="FontFile" uid="uid://c1es1jqn4ro0b" path="res://assets/assetsTutor6/GrapeSoda.ttf" id="3_fcfin"]
+[ext_resource type="AudioStream" uid="uid://ogy5l2axsja3" path="res://assets/sound/511385__mrthenoronha__power-up-8-bit.wav" id="4_dbl52"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jd8a1"]
+
+[sub_resource type="Theme" id="Theme_b5mj6"]
+default_font = ExtResource("3_fcfin")
+default_font_size = 35
+
+[node name="PotionHover" type="Node2D"]
+script = ExtResource("1_bptqp")
+
+[node name="PotionImg" type="Sprite2D" parent="."]
+position = Vector2(1.12488, 0.875123)
+rotation = -0.381745
+scale = Vector2(0.0993652, 0.0993652)
+texture = ExtResource("2_n61fb")
+
+[node name="HoverUnlockZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverUnlockZone"]
+position = Vector2(-6.10948e-05, 6.19888e-05)
+scale = Vector2(3.32, 3.32)
+shape = SubResource("CircleShape2D_jd8a1")
+
+[node name="Label" type="Label" parent="HoverUnlockZone"]
+offset_left = -207.0
+offset_top = -150.0
+offset_right = 208.0
+offset_bottom = -75.0
+theme = SubResource("Theme_b5mj6")
+text = "New power unlocked!
+Hold Shift to slow the gravity"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="HoverUnlockZone"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="HoverUnlockZone"]
+stream = ExtResource("4_dbl52")
+volume_db = 9.0

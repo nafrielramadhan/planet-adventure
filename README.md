@@ -1,1 +1,1 @@
-# planet-adventure
+# tutorial-6-gamedev

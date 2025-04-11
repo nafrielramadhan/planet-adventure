@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr0cijsex4htm"]
+
+[ext_resource type="Script" path="res://scripts/Intro.gd" id="1_6hil3"]
+[ext_resource type="Texture2D" uid="uid://kacbwfcpljp5" path="res://assets/_story/slide1.png" id="2_fmlei"]
+[ext_resource type="Texture2D" uid="uid://1wakih5sdmq8" path="res://assets/_story/slide2.png" id="3_ycjye"]
+[ext_resource type="AudioStream" uid="uid://c2hwtybrnvsy1" path="res://assets/sound/647212__kjartan_abel__boschs-garden-mythical-game-music-for-fantasy-and-ai-projects.wav" id="4_ubedg"]
+[ext_resource type="Texture2D" uid="uid://b5nu8dtwh2ody" path="res://assets/_story/slide3.png" id="4_yfqoo"]
+
+[node name="Intro" type="Node2D"]
+position = Vector2(575, 300)
+script = ExtResource("1_6hil3")
+slides = Array[Texture2D]([ExtResource("2_fmlei"), ExtResource("3_ycjye"), ExtResource("4_yfqoo")])
+switch_delay = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1059, -278)
+stream = ExtResource("4_ubedg")
+volume_db = 9.0
+autoplay = true
+max_distance = 8000.0
