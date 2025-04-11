@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3k5kf1ioxeok"]
+
+[ext_resource type="Script" path="res://scripts/player_bullet.gd" id="1_vj1qo"]
+[ext_resource type="Texture2D" uid="uid://cux5kway70v6q" path="res://assets/object_img/ChatGPT Image Apr 11, 2025, 02_36_17 PM.png" id="2_y821e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkq0i"]
+size = Vector2(10, 10)
+
+[node name="player_bullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_vj1qo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.992157, 1, 1)
+position = Vector2(0, 1)
+scale = Vector2(-0.0800014, -0.0800014)
+texture = ExtResource("2_y821e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.68, 2.68)
+shape = SubResource("RectangleShape2D_qkq0i")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1.68, 1.68)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

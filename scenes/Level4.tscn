@@ -1,0 +1,385 @@
+[gd_scene load_steps=19 format=4 uid="uid://dhl0ymtdqrj83"]
+
+[ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_3peai"]
+[ext_resource type="Texture2D" uid="uid://v5v1cuxtt65k" path="res://assets/object_img/background/ChatGPT Image Apr 11, 2025, 11_02_51 AM.png" id="1_mbcjs"]
+[ext_resource type="Texture2D" uid="uid://waka2vnagn14" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_sand.png" id="2_b6day"]
+[ext_resource type="PackedScene" uid="uid://diqmik27oab1p" path="res://scenes/Lava.tscn" id="3_o8unl"]
+[ext_resource type="PackedScene" uid="uid://cneiuec24r70n" path="res://scenes/LifeCounter.tscn" id="4_psugl"]
+[ext_resource type="PackedScene" uid="uid://d3vovdgenig7e" path="res://scenes/CoinCounter.tscn" id="5_peuuq"]
+[ext_resource type="PackedScene" uid="uid://cvbijuok61cp" path="res://scenes/PotionHover.tscn" id="6_tos05"]
+[ext_resource type="PackedScene" uid="uid://4y8egpi2trnr" path="res://scenes/AreaTrigger.tscn" id="8_55ccc"]
+[ext_resource type="Script" path="res://scripts/arealava.gd" id="9_8e6dc"]
+[ext_resource type="FontFile" uid="uid://c1es1jqn4ro0b" path="res://assets/assetsTutor6/GrapeSoda.ttf" id="9_f0tb0"]
+[ext_resource type="PackedScene" uid="uid://d0h88njsdrvbf" path="res://scenes/coin.tscn" id="10_6o21b"]
+[ext_resource type="Script" path="res://scripts/spawnerLevel4.gd" id="11_h22cg"]
+[ext_resource type="PackedScene" uid="uid://dggw2q2mpk2s" path="res://scenes/FallingEnemyLevel4.tscn" id="12_huecc"]
+[ext_resource type="Script" path="res://scripts/area_trigger_tanpaanimasi.gd" id="13_17tn7"]
+[ext_resource type="Texture2D" uid="uid://7yamkgtbarcn" path="res://assets/assetsTutor5/kenney_planets/Planets/planet07.png" id="15_b7lmg"]
+[ext_resource type="AudioStream" uid="uid://byf2e082t7xyo" path="res://assets/sound/415804__sunsai__mushroom-background-music.wav" id="16_rg6x7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2koaa"]
+texture = ExtResource("2_b6day")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 33.75, 64, -34.25, 39, -64, -7.5)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, 64, -33.75, 64, 34.25, 39, 64, -7.5)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, -22.5)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, 64, 64, -22.5)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9.5, -64, 10.5)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9.5, -64, 10.5)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9.5, -64, 10.5)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9.5, -64, 10.5)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -64, 64, 64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_3obiw"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_2koaa")
+
+[node name="Level4" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+
+[node name="ChatGptImageApr11,2025,110251Am" type="Sprite2D" parent="BG"]
+position = Vector2(-1678, -186)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am2" type="Sprite2D" parent="BG"]
+position = Vector2(3812, -1194)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am3" type="Sprite2D" parent="BG"]
+position = Vector2(2365, -1194)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am4" type="Sprite2D" parent="BG"]
+position = Vector2(999, -1190)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am5" type="Sprite2D" parent="BG"]
+position = Vector2(-252, -1190)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am6" type="Sprite2D" parent="BG"]
+position = Vector2(-1678, -1192)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am7" type="Sprite2D" parent="BG"]
+position = Vector2(4339, -186)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am8" type="Sprite2D" parent="BG"]
+position = Vector2(2823, -186)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am9" type="Sprite2D" parent="BG"]
+position = Vector2(1328, -186)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am10" type="Sprite2D" parent="BG"]
+position = Vector2(-187, -186)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am11" type="Sprite2D" parent="BG"]
+position = Vector2(-1678, 838)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am12" type="Sprite2D" parent="BG"]
+position = Vector2(4339, 838)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am13" type="Sprite2D" parent="BG"]
+position = Vector2(2823, 838)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am14" type="Sprite2D" parent="BG"]
+position = Vector2(1328, 838)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am15" type="Sprite2D" parent="BG"]
+position = Vector2(-187, 838)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am17" type="Sprite2D" parent="BG"]
+position = Vector2(6947, -2241)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am18" type="Sprite2D" parent="BG"]
+position = Vector2(5420, -2223)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am19" type="Sprite2D" parent="BG"]
+position = Vector2(3921, -2221)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am20" type="Sprite2D" parent="BG"]
+position = Vector2(2421, -2241)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am26" type="Sprite2D" parent="BG"]
+position = Vector2(1202, -2208)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am27" type="Sprite2D" parent="BG"]
+position = Vector2(-314, -2208)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am28" type="Sprite2D" parent="BG"]
+position = Vector2(-1809, -2208)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am29" type="Sprite2D" parent="BG"]
+position = Vector2(-3124, -1281)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am30" type="Sprite2D" parent="BG"]
+position = Vector2(-3222, -2236)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am31" type="Sprite2D" parent="BG"]
+position = Vector2(-3182, 698)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am32" type="Sprite2D" parent="BG"]
+position = Vector2(-3182, -271)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am21" type="Sprite2D" parent="BG"]
+position = Vector2(5809, -211)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am34" type="Sprite2D" parent="BG"]
+position = Vector2(5838, 653)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am33" type="Sprite2D" parent="BG"]
+position = Vector2(6987, -211)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am35" type="Sprite2D" parent="BG"]
+position = Vector2(7041, 638)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am22" type="Sprite2D" parent="BG"]
+position = Vector2(6947, -1217)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am23" type="Sprite2D" parent="BG"]
+position = Vector2(5436, -1210)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am24" type="Sprite2D" parent="BG"]
+position = Vector2(3952, -1210)
+texture = ExtResource("1_mbcjs")
+
+[node name="ChatGptImageApr11,2025,110251Am25" type="Sprite2D" parent="BG"]
+position = Vector2(2421, -1217)
+texture = ExtResource("1_mbcjs")
+
+[node name="Player" parent="." instance=ExtResource("1_3peai")]
+position = Vector2(-1832, -207)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADx/wAAAAADAAAAAAD0/wAAAAAEAAAAAADy/wAAAAAHAAEAAAD1//3/AAAAAAAAAADz/wAAAAAHAAEAAAD4//3/AAAAAAAAAAD7//3/AAADAAAAAAD8//3/AAAHAAEAAAAMAP3/AAAHAAEAAAANAP3/AAAEAAAAAAAIAPv/AAAAAAAAAAAQAPv/AAAAAAEAAAAVAPf/AAAAAAEAAAARAAAAAAADAAAAAAAUAAAAAAAEAAAAAAASAAAAAAAHAAEAAAATAAAAAAAHAAEAAAAVAPz/AAAAAAAAAAAYAPf/AAADAAAAAAAZAPf/AAAHAAEAAAAcAPf/AAAHAAEAAAAjAPf/AAAHAAEAAAAmAPf/AAAEAAAAAAAwAPb/AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_3obiw")
+
+[node name="Lava" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(579, -316)
+scale = Vector2(1.77408, 1.48)
+script = null
+
+[node name="Lava2" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(302, -316)
+scale = Vector2(1.77408, 1.48)
+script = null
+
+[node name="Lava3" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(25, -316)
+scale = Vector2(1.77408, 1.48)
+script = null
+
+[node name="Lava4" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(-252, -316)
+scale = Vector2(1.77408, 1.48)
+script = null
+
+[node name="Lava5" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(859, -316)
+scale = Vector2(1.77408, 1.48)
+script = null
+
+[node name="Lava6" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(1139, -316)
+scale = Vector2(1.77408, 1.48)
+script = null
+
+[node name="Lava7" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(1404, -316)
+scale = Vector2(1.77408, 1.48)
+script = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("4_psugl")]
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinCounter" parent="CanvasLayer" instance=ExtResource("5_peuuq")]
+metadata/_edit_use_anchors_ = true
+
+[node name="PotionHover" parent="." instance=ExtResource("6_tos05")]
+position = Vector2(-1343, -472)
+
+[node name="Area Trigger2" parent="." instance=ExtResource("8_55ccc")]
+position = Vector2(579, -369)
+scale = Vector2(97.7833, 0.995761)
+script = ExtResource("9_8e6dc")
+sceneName = "Level4"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -708.0
+offset_top = -728.0
+offset_right = -69.0
+offset_bottom = -653.0
+theme_override_fonts/font = ExtResource("9_f0tb0")
+theme_override_font_sizes/font_size = 35
+text = "Stay away from the lava!
+Use your new power to slow down the gravity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coin" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(-1481, -317)
+
+[node name="Coin2" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(719, -962)
+
+[node name="Coin6" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(1081, -728)
+
+[node name="Coin7" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(1718, -497)
+
+[node name="Coin8" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(3635, -1257)
+
+[node name="Coin13" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(3635, -1257)
+
+[node name="Coin14" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(6179, -1441)
+
+[node name="Coin15" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(4962, -1303)
+
+[node name="Coin17" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(5611, -1534)
+
+[node name="Coin16" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(4160, -1488)
+
+[node name="Coin9" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(2375, -1064)
+
+[node name="Coin10" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(2749, -1257)
+
+[node name="Coin11" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(2749, -599)
+
+[node name="Coin12" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(2114, -728)
+
+[node name="Coin3" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(231, -795)
+
+[node name="Coin4" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(-445, -497)
+
+[node name="Coin5" parent="Coin" instance=ExtResource("10_6o21b")]
+position = Vector2(-966, -472)
+
+[node name="Lava8" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(3454, -1084)
+scale = Vector2(1.67266, 1.51443)
+script = null
+
+[node name="Lava11" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(4350, -1084)
+scale = Vector2(1.67266, 1.51443)
+script = null
+
+[node name="Lava12" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(4736, -1084)
+scale = Vector2(1.67266, 1.51443)
+script = null
+
+[node name="Lava9" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(4102, -1084)
+scale = Vector2(1.67266, 1.51443)
+script = null
+
+[node name="Lava10" parent="." instance=ExtResource("3_o8unl")]
+position = Vector2(3842, -1084)
+scale = Vector2(1.67266, 1.51443)
+script = null
+
+[node name="Area Trigger3" parent="." instance=ExtResource("8_55ccc")]
+position = Vector2(3044, 301)
+scale = Vector2(593.694, 2.51255)
+sceneName = "Level4"
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(0, -1776)
+script = ExtResource("11_h22cg")
+obstacle = ExtResource("12_huecc")
+
+[node name="Area Trigger5" parent="." instance=ExtResource("8_55ccc")]
+position = Vector2(4053, -1137)
+scale = Vector2(93.1833, 0.995761)
+script = ExtResource("13_17tn7")
+sceneName = "Level4"
+
+[node name="PlanetWin" type="Sprite2D" parent="."]
+position = Vector2(6264, -1729)
+scale = Vector2(0.328206, 0.328206)
+texture = ExtResource("15_b7lmg")
+
+[node name="Area Trigger" parent="PlanetWin" instance=ExtResource("8_55ccc")]
+position = Vector2(-9.14059, -3.04689)
+scale = Vector2(50, 50)
+sceneName = "BossRoom"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1767, -1064)
+stream = ExtResource("16_rg6x7")
+volume_db = 7.0
+autoplay = true
+max_distance = 8000.0

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://51peg8redc2y"]
+
+[ext_resource type="Script" path="res://scripts/PotionTripleJump.gd" id="1_myadc"]
+[ext_resource type="Texture2D" uid="uid://notoxnlj0qeh" path="res://assets/object_img/ChatGPT Image Apr 9, 2025, 08_45_39 PM.png" id="2_eev3c"]
+[ext_resource type="FontFile" uid="uid://c1es1jqn4ro0b" path="res://assets/assetsTutor6/GrapeSoda.ttf" id="3_8u7f4"]
+[ext_resource type="AudioStream" uid="uid://ogy5l2axsja3" path="res://assets/sound/511385__mrthenoronha__power-up-8-bit.wav" id="4_ve1xr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgbwq"]
+
+[sub_resource type="Theme" id="Theme_40tki"]
+default_font = ExtResource("3_8u7f4")
+default_font_size = 35
+
+[node name="Potion" type="Node2D"]
+script = ExtResource("1_myadc")
+
+[node name="PotionImg" type="Sprite2D" parent="."]
+position = Vector2(1.12488, 0.875123)
+rotation = 0.31106
+scale = Vector2(0.0993652, 0.0993652)
+texture = ExtResource("2_eev3c")
+
+[node name="TripleJumpUnlockZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TripleJumpUnlockZone"]
+position = Vector2(-6.10948e-05, 6.19888e-05)
+scale = Vector2(3.32, 3.32)
+shape = SubResource("CircleShape2D_jgbwq")
+
+[node name="Label" type="Label" parent="TripleJumpUnlockZone"]
+offset_left = -144.0
+offset_top = -147.0
+offset_right = 145.0
+offset_bottom = -72.0
+theme = SubResource("Theme_40tki")
+text = "New power unlocked!
+Try triple jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="TripleJumpUnlockZone"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="TripleJumpUnlockZone"]
+stream = ExtResource("4_ve1xr")
+volume_db = 9.0

@@ -1,0 +1,160 @@
+[gd_scene load_steps=18 format=4 uid="uid://yqmk0vpvnyxr"]
+
+[ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://74hejk4gl7bg" path="res://assets/object_img/background/ChatGPT Image Apr 11, 2025, 10_39_16 AM.png" id="1_solwt"]
+[ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="2_tvld2"]
+[ext_resource type="PackedScene" uid="uid://4y8egpi2trnr" path="res://scenes/AreaTrigger.tscn" id="4_e5hqp"]
+[ext_resource type="Texture2D" uid="uid://dtad60h2i1bp2" path="res://assets/assetsTutor5/kenney_planets/Planets/planet01.png" id="4_ei1fj"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="5_53a1o"]
+[ext_resource type="Script" path="res://scripts/next_level_trigger.gd" id="5_lw1os"]
+[ext_resource type="PackedScene" uid="uid://clbvvq0h20t2s" path="res://scenes/FallingFish.tscn" id="6_grabg"]
+[ext_resource type="PackedScene" uid="uid://d0h88njsdrvbf" path="res://scenes/coin.tscn" id="7_pxk6n"]
+[ext_resource type="AudioStream" uid="uid://q6p8t72xiqoc" path="res://assets/assetsTutor5/sounds/698375__sieuamthanh__happy-8bit-pixel-adenture-30.wav" id="8_505vg"]
+[ext_resource type="PackedScene" uid="uid://r2w1ecbhafo0" path="res://scenes/fire.tscn" id="9_vc2nw"]
+[ext_resource type="PackedScene" uid="uid://d3vovdgenig7e" path="res://scenes/CoinCounter.tscn" id="10_msjq0"]
+[ext_resource type="PackedScene" uid="uid://cneiuec24r70n" path="res://scenes/LifeCounter.tscn" id="10_s73tl"]
+[ext_resource type="PackedScene" uid="uid://crjvb8pb2ejxl" path="res://scenes/Home.tscn" id="13_7uq85"]
+[ext_resource type="PackedScene" uid="uid://d2j55f0exod" path="res://scenes/BeeEnemy.tscn" id="14_u2o22"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7l7f"]
+texture = ExtResource("2_tvld2")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, 54.75, 60, 5.75, 54.5, -36.75, 35, -57.75, 9.5, -64, -12.5, -64, -64)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -64, 64, -54.75, 60, -5.75, 54.5, 36.75, 35, 57.75, 9.5, 64, -12.5, 64, -64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, -20.5, -64, -64)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -64, 64, 64, -20.5, 64, -64)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 9.5, -64, 9, -64, -64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9, -64, 9.5)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9, -64, 9.5)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9, -64, 9.5)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, -64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_fifnm"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_u7l7f")
+
+[node name="Level1" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+
+[node name="ChatGptImageApr11,2025,103916Am4" type="Sprite2D" parent="BG"]
+position = Vector2(134, 1099)
+scale = Vector2(1.84722, 1.84722)
+texture = ExtResource("1_solwt")
+
+[node name="ChatGptImageApr11,2025,103916Am2" type="Sprite2D" parent="BG"]
+position = Vector2(2882, -239)
+scale = Vector2(1.85672, 1.85672)
+texture = ExtResource("1_solwt")
+
+[node name="ChatGptImageApr11,2025,103916Am3" type="Sprite2D" parent="BG"]
+position = Vector2(2887, 1597)
+scale = Vector2(1.85672, 1.85672)
+texture = ExtResource("1_solwt")
+
+[node name="ChatGptImageApr11,2025,103916Am" type="Sprite2D" parent="BG"]
+position = Vector2(134, -239)
+scale = Vector2(1.84722, 1.84722)
+texture = ExtResource("1_solwt")
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(-622, 340)
+collision_layer = 3
+collision_mask = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-130, 120.5)
+tile_map_data = PackedByteArray("AAD+/wMAAAAHAAEAAAD//wMAAAAHAAEAAAAAAAIAAAAFAAEAAAABAAIAAAAHAAEAAAAAAAMAAAAIAAAAAAAEAAAAAAAAAAEAAAAFAP//AAAAAAEAAAAHAP//AAADAAAAAAACAAIAAAAGAAAAAAABAAMAAAABAAAAAAADAAEAAAAAAAEAAAAMAP7/AAADAAAAAAANAP7/AAAHAAEAAAAOAP7/AAAHAAEAAAAPAP7/AAAHAAEAAAAQAP7/AAAEAAAAAAAKAP//AAAEAAAAAAAIAP//AAAHAAEAAAAJAP//AAAHAAEAAAD7/wMAAAAHAAEAAAD8/wMAAAAHAAEAAAD9/wMAAAAHAAEAAAD3/wMAAAAFAAAAAAD4/wMAAAAHAAEAAAD5/wMAAAAHAAEAAAD6/wMAAAAHAAEAAAA=")
+tile_set = SubResource("TileSet_fifnm")
+
+[node name="Area Trigger2" parent="." instance=ExtResource("4_e5hqp")]
+position = Vector2(627, 655)
+scale = Vector2(270.214, 2.51255)
+sceneName = "Level1"
+
+[node name="PlanetLevel2" type="Sprite2D" parent="."]
+position = Vector2(1978, -514)
+scale = Vector2(0.406543, 0.406543)
+texture = ExtResource("4_ei1fj")
+
+[node name="Area Trigger" parent="PlanetLevel2" instance=ExtResource("4_e5hqp")]
+position = Vector2(-2.45969, 2.4597)
+scale = Vector2(51.7012, 51.7012)
+script = ExtResource("5_lw1os")
+sceneName = "Level2"
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(186, -508)
+script = ExtResource("5_53a1o")
+obstacle = ExtResource("6_grabg")
+
+[node name="Coin" parent="." instance=ExtResource("7_pxk6n")]
+position = Vector2(-282, 446)
+
+[node name="Coin2" parent="." instance=ExtResource("7_pxk6n")]
+position = Vector2(143, 305)
+
+[node name="Coin3" parent="." instance=ExtResource("7_pxk6n")]
+position = Vector2(427, 56)
+
+[node name="Coin4" parent="." instance=ExtResource("7_pxk6n")]
+position = Vector2(1274, -232)
+
+[node name="Coin5" parent="." instance=ExtResource("7_pxk6n")]
+position = Vector2(1752, -314)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_505vg")
+volume_db = 2.0
+autoplay = true
+max_distance = 3000.0
+
+[node name="Fire" parent="." instance=ExtResource("9_vc2nw")]
+position = Vector2(1025, -64)
+scale = Vector2(1.16, 1.16)
+sceneName = "Level1"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CoinCounter" parent="CanvasLayer" instance=ExtResource("10_msjq0")]
+
+[node name="LifeCounter" parent="CanvasLayer" instance=ExtResource("10_s73tl")]
+
+[node name="Home" parent="." instance=ExtResource("13_7uq85")]
+position = Vector2(-967, 299)
+
+[node name="BeeEnemy2" parent="." instance=ExtResource("14_u2o22")]
+position = Vector2(707, -98)
+sceneName = "Level1"
+
+[node name="BeeEnemy2" parent="BeeEnemy2" instance=ExtResource("14_u2o22")]
+position = Vector2(822, -127)
+sceneName = "Level1"

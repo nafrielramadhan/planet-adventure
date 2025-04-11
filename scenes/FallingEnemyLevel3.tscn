@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsbejncm8wcjb"]
+
+[ext_resource type="Script" path="res://scripts/falling_enemy_level_3.gd" id="1_jmk3j"]
+[ext_resource type="Texture2D" uid="uid://cqe1vtggc17i7" path="res://assets/object_img/ChatGPT Image Apr 11, 2025, 01_14_05 PM.png" id="2_x1rvj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxt6n"]
+radius = 12.4458
+height = 26.5052
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w8akh"]
+radius = 41.0
+height = 88.0
+
+[node name="FallingItemLevel4" type="RigidBody2D"]
+script = ExtResource("1_jmk3j")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(1.79293, -3.9587)
+rotation = 6.28346
+scale = Vector2(0.0897659, 0.0983476)
+texture = ExtResource("2_x1rvj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+scale = Vector2(3.13358, 3.16919)
+shape = SubResource("CapsuleShape2D_vxt6n")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, 0)
+shape = SubResource("CapsuleShape2D_w8akh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_FallArea_body_entered"]

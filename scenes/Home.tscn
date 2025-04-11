@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://crjvb8pb2ejxl"]
+
+[ext_resource type="Texture2D" uid="uid://cqspr5n7fwcr6" path="res://assets/object_img/ChatGPT Image Apr 9, 2025, 09_21_55 AM.png" id="1_31wq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tl27m"]
+size = Vector2(45.205, 221.999)
+
+[node name="Home" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.480002, 0.480002)
+texture = ExtResource("1_31wq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13.5, 9.29165)
+scale = Vector2(13.2508, -1.88027)
+shape = SubResource("RectangleShape2D_tl27m")

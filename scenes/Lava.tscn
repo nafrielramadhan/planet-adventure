@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://diqmik27oab1p"]
+
+[ext_resource type="Script" path="res://scripts/lava.gd" id="1_rvd0s"]
+[ext_resource type="Texture2D" uid="uid://bnvbbuhlgehel" path="res://assets/object_img/ChatGPT Image Apr 9, 2025, 09_54_38 AM.jpeg" id="2_lgp6d"]
+[ext_resource type="AudioStream" uid="uid://dxxj1k886yn6x" path="res://assets/assetsTutor5/sounds/fire.wav" id="3_uheof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp1xx"]
+size = Vector2(45.7504, 83.6259)
+
+[node name="Lava" type="Node2D"]
+script = ExtResource("1_rvd0s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-39.5, 0)
+scale = Vector2(0.343478, 0.343478)
+texture = ExtResource("2_lgp6d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(39.5, 0)
+scale = Vector2(0.343478, 0.343478)
+texture = ExtResource("2_lgp6d")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.21865e-06, -0.381187)
+scale = Vector2(3.40981, 0.947525)
+shape = SubResource("RectangleShape2D_fp1xx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(3.39844, 3.39844)
+stream = ExtResource("3_uheof")
+volume_db = 19.0
+autoplay = true
+max_distance = 800.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
