@@ -4,9 +4,10 @@
 [ext_resource type="FontFile" uid="uid://c1es1jqn4ro0b" path="res://assets/assetsTutor6/GrapeSoda.ttf" id="1_vmare"]
 
 [node name="CoinCounter" type="MarginContainer"]
-offset_left = 183.0
-offset_right = 184.0
-offset_bottom = 46.0
+offset_left = 198.0
+offset_top = 4.0
+offset_right = 199.0
+offset_bottom = 50.0
 
 [node name="CoinCounter" type="Label" parent="."]
 layout_mode = 2

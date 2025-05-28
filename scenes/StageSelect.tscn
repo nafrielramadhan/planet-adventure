@@ -78,8 +78,8 @@ text = "*you need to play level 3 first to play level 4 & boss-fight"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Level1" to="HBoxContainer/VBoxContainer/Level1" method="_on_Level1_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Level1" to="HBoxContainer/VBoxContainer/Level1" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Level1" to="HBoxContainer/VBoxContainer/Level1" method="_on_Level1_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Level2" to="HBoxContainer/VBoxContainer/Level2" method="_on_Level2_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Level3" to="HBoxContainer/VBoxContainer/Level3" method="_on_Level1_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Level3" to="HBoxContainer/VBoxContainer/Level3" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Level3" to="HBoxContainer/VBoxContainer/Level3" method="_on_Level1_pressed"]

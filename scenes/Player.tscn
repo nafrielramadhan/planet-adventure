@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bc2fujtl13g10"]
+[gd_scene load_steps=21 format=3 uid="uid://bc2fujtl13g10"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xsgpf"]
 [ext_resource type="PackedScene" uid="uid://b3k5kf1ioxeok" path="res://scenes/player_bullet.tscn" id="2_l1ylu"]
 [ext_resource type="Texture2D" uid="uid://ba131oa8iguva" path="res://assets/assetsTutor5/Male adventurer/Tilesheet/character_maleAdventurer_sheetHD.png" id="2_wgrer"]
+[ext_resource type="Texture2D" uid="uid://do2q2vg3p2ote" path="res://assets/UAS/brickGrey_small.png" id="4_a1dca"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mgy2e"]
 atlas = ExtResource("2_wgrer")
@@ -136,6 +137,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(76, 116)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lmrbi"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(30, 1, 1)
+inherit_velocity_ratio = 50.0
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, -200, 0)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xsgpf")
 bullet_node = ExtResource("2_l1ylu")
@@ -152,3 +162,12 @@ frame_progress = 0.422136
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("1")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 42)
+scale = Vector2(0.6, 0.6)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_lmrbi")
+texture = ExtResource("4_a1dca")
+lifetime = 0.5
+draw_order = 0

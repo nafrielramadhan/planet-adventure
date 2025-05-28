@@ -12,6 +12,7 @@ radius = 39.0
 height = 102.0
 
 [node name="FallingItem" type="RigidBody2D"]
+gravity_scale = 0.65
 script = ExtResource("1_nfywq")
 
 [node name="Pinkitem" type="Sprite2D" parent="."]

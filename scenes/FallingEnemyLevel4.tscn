@@ -12,6 +12,7 @@ radius = 36.0
 height = 94.0
 
 [node name="FallingItemLevel4" type="RigidBody2D"]
+gravity_scale = 0.5
 script = ExtResource("1_sr4ge")
 
 [node name="Lava" type="Sprite2D" parent="."]

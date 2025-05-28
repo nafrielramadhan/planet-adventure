@@ -14,6 +14,14 @@ func spawn():
 
 	spawned.global_position = spawn_pos
 
+	# Visual Cue
+	var player = get_tree().current_scene.get_node("Player")
+	var camera_offset_x = spawn_pos.x - player.global_position.x
+
+	var indicator = load("res://scenes/FallIndicator.tscn").instantiate()
+	indicator.target_world_position = spawn_pos
+	indicator.linked_enemy = spawned
+	get_tree().current_scene.get_node("CanvasLayer").add_child(indicator)
 
 func repeat():
 	spawn()

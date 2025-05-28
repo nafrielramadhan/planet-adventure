@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dhl0ymtdqrj83"]
+[gd_scene load_steps=20 format=4 uid="uid://dhl0ymtdqrj83"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_3peai"]
 [ext_resource type="Texture2D" uid="uid://v5v1cuxtt65k" path="res://assets/object_img/background/ChatGPT Image Apr 11, 2025, 11_02_51 AM.png" id="1_mbcjs"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://scripts/area_trigger_tanpaanimasi.gd" id="13_17tn7"]
 [ext_resource type="Texture2D" uid="uid://7yamkgtbarcn" path="res://assets/assetsTutor5/kenney_planets/Planets/planet07.png" id="15_b7lmg"]
 [ext_resource type="AudioStream" uid="uid://byf2e082t7xyo" path="res://assets/sound/415804__sunsai__mushroom-background-music.wav" id="16_rg6x7"]
+[ext_resource type="PackedScene" uid="uid://cjnstd633m42c" path="res://scenes/Lives.tscn" id="17_16kx8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2koaa"]
 texture = ExtResource("2_b6day")
@@ -281,9 +282,6 @@ position = Vector2(-1481, -317)
 [node name="Coin2" parent="Coin" instance=ExtResource("10_6o21b")]
 position = Vector2(719, -962)
 
-[node name="Coin6" parent="Coin" instance=ExtResource("10_6o21b")]
-position = Vector2(1081, -728)
-
 [node name="Coin7" parent="Coin" instance=ExtResource("10_6o21b")]
 position = Vector2(1718, -497)
 
@@ -307,9 +305,6 @@ position = Vector2(4160, -1488)
 
 [node name="Coin9" parent="Coin" instance=ExtResource("10_6o21b")]
 position = Vector2(2375, -1064)
-
-[node name="Coin10" parent="Coin" instance=ExtResource("10_6o21b")]
-position = Vector2(2749, -1257)
 
 [node name="Coin11" parent="Coin" instance=ExtResource("10_6o21b")]
 position = Vector2(2749, -599)
@@ -383,3 +378,6 @@ stream = ExtResource("16_rg6x7")
 volume_db = 7.0
 autoplay = true
 max_distance = 8000.0
+
+[node name="Lives" parent="." instance=ExtResource("17_16kx8")]
+position = Vector2(1088, -714)

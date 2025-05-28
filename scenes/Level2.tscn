@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cee8obd3lpooy"]
+[gd_scene load_steps=20 format=4 uid="uid://cee8obd3lpooy"]
 
 [ext_resource type="Texture2D" uid="uid://umyn1pk3r28u" path="res://assets/object_img/background/ChatGPT Image Apr 11, 2025, 10_50_06 AM.png" id="1_ad1kj"]
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="1_lqyuo"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://r2w1ecbhafo0" path="res://scenes/fire.tscn" id="12_0bali"]
 [ext_resource type="PackedScene" uid="uid://cneiuec24r70n" path="res://scenes/LifeCounter.tscn" id="13_v33pc"]
 [ext_resource type="PackedScene" uid="uid://d3vovdgenig7e" path="res://scenes/CoinCounter.tscn" id="14_2wqdv"]
+[ext_resource type="PackedScene" uid="uid://cjnstd633m42c" path="res://scenes/Lives.tscn" id="16_2acy2"]
 [ext_resource type="PackedScene" uid="uid://dlsjbafud5u1w" path="res://scenes/EnemyLevel2.tscn" id="16_3q1sb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87c7u"]
@@ -297,9 +298,6 @@ position = Vector2(1655, -43)
 [node name="Coin10" parent="Coin" instance=ExtResource("5_0ae3c")]
 position = Vector2(3522, 1202)
 
-[node name="Coin11" parent="Coin" instance=ExtResource("5_0ae3c")]
-position = Vector2(3263, 1085)
-
 [node name="Coin12" parent="Coin" instance=ExtResource("5_0ae3c")]
 position = Vector2(3004, 1198)
 
@@ -320,3 +318,6 @@ sceneName = "Level2"
 [node name="BeeEnemy3" parent="." instance=ExtResource("16_3q1sb")]
 position = Vector2(1631, 101)
 sceneName = "Level2"
+
+[node name="Lives2" parent="." instance=ExtResource("16_2acy2")]
+position = Vector2(2496, 802)

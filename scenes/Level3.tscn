@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cy1s4uhak0i2l"]
+[gd_scene load_steps=18 format=4 uid="uid://cy1s4uhak0i2l"]
 
 [ext_resource type="Texture2D" uid="uid://b042865vv08db" path="res://assets/object_img/background/ChatGPT Image Apr 11, 2025, 11_32_01 AM.png" id="1_hrg0s"]
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_u672w"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bsbejncm8wcjb" path="res://scenes/FallingEnemyLevel3.tscn" id="12_3g7da"]
 [ext_resource type="PackedScene" uid="uid://4d53fw43m3s5" path="res://scenes/EnemyLevel3.tscn" id="13_3eyju"]
 [ext_resource type="AudioStream" uid="uid://d3b5ewnaobli4" path="res://assets/sound/415806__sunsai__desert-background-music.wav" id="14_y0v1e"]
+[ext_resource type="PackedScene" uid="uid://cjnstd633m42c" path="res://scenes/Lives.tscn" id="15_foqdj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_apl77"]
 texture = ExtResource("2_6d6e4")
@@ -250,10 +251,7 @@ position = Vector2(-1028, 525)
 position = Vector2(2101, -232)
 
 [node name="Coin7" parent="Coin" instance=ExtResource("9_1k4pd")]
-position = Vector2(2358, -610)
-
-[node name="Coin8" parent="Coin" instance=ExtResource("9_1k4pd")]
-position = Vector2(2618, -991)
+position = Vector2(2625, -984)
 
 [node name="Coin2" parent="Coin" instance=ExtResource("9_1k4pd")]
 position = Vector2(1540, -69)
@@ -269,6 +267,9 @@ position = Vector2(-377, 66)
 
 [node name="Coin6" parent="Coin" instance=ExtResource("9_1k4pd")]
 position = Vector2(-709, 325)
+
+[node name="Coin8" parent="Coin" instance=ExtResource("9_1k4pd")]
+position = Vector2(4716, -1220)
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 610.0
@@ -305,3 +306,6 @@ stream = ExtResource("14_y0v1e")
 volume_db = 5.0
 autoplay = true
 max_distance = 8000.0
+
+[node name="Lives" parent="." instance=ExtResource("15_foqdj")]
+position = Vector2(823, 187)

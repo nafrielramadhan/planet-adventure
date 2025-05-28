@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6p3s6p6d1tfd"]
+
+[ext_resource type="Script" path="res://scripts/fall_indicator.gd" id="1_qrhg4"]
+[ext_resource type="Texture2D" uid="uid://c1vg5a4uglmmt" path="res://assets/UAS/area-marker.png" id="2_xxmke"]
+
+[node name="FallIndicator" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qrhg4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 45.0
+offset_bottom = 38.0
+texture = ExtResource("2_xxmke")
+expand_mode = 1

@@ -4,6 +4,9 @@ var lives= 5
 
 var coins= 0
 
+func add_live():
+	lives += 1  
+
 func add_coin():
 	coins += 1  
 

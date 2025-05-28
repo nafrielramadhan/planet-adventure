@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://yqmk0vpvnyxr"]
+[gd_scene load_steps=19 format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://74hejk4gl7bg" path="res://assets/object_img/background/ChatGPT Image Apr 11, 2025, 10_39_16 AM.png" id="1_solwt"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cneiuec24r70n" path="res://scenes/LifeCounter.tscn" id="10_s73tl"]
 [ext_resource type="PackedScene" uid="uid://crjvb8pb2ejxl" path="res://scenes/Home.tscn" id="13_7uq85"]
 [ext_resource type="PackedScene" uid="uid://d2j55f0exod" path="res://scenes/BeeEnemy.tscn" id="14_u2o22"]
+[ext_resource type="PackedScene" uid="uid://cjnstd633m42c" path="res://scenes/Lives.tscn" id="16_qvxpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7l7f"]
 texture = ExtResource("2_tvld2")
@@ -126,7 +127,7 @@ position = Vector2(143, 305)
 position = Vector2(427, 56)
 
 [node name="Coin4" parent="." instance=ExtResource("7_pxk6n")]
-position = Vector2(1274, -232)
+position = Vector2(573, -73)
 
 [node name="Coin5" parent="." instance=ExtResource("7_pxk6n")]
 position = Vector2(1752, -314)
@@ -158,3 +159,6 @@ sceneName = "Level1"
 [node name="BeeEnemy2" parent="BeeEnemy2" instance=ExtResource("14_u2o22")]
 position = Vector2(822, -127)
 sceneName = "Level1"
+
+[node name="Lives" parent="." instance=ExtResource("16_qvxpe")]
+position = Vector2(1303, -233)
